@@ -64,5 +64,7 @@
         $row++;
     }
     
+    printf("There are $row rows imported in the database");
+    
     fclose($USfile);
 ?>
