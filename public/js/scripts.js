@@ -72,7 +72,21 @@ $(function() {
  */
 function addMarker(place)
 {
-    // TODO
+    console.log(place);
+
+    // Set the longitude and latitude which we got from the data requested in update
+    var LatLng = {lat: parseFloat(place['latitude']), lng: parseFloat(place['longitude'])};
+    
+    markers = new google.maps.Marker({
+        position: LatLng,
+        map: map,
+        title: "Marker"
+    });
+    
+    // When clicked on the marker the info window will appear
+    markers.addListener("click", function(){
+        info.open(map, markers);
+    });
 }
 
 /**
